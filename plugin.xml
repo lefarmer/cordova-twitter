@@ -1,0 +1,32 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+    id="co.thinkim.twitter"
+    version="1.0.0">
+    <name>Twitter</name>
+    <js-module src="www/twitter.js" name="twitter">
+        <merges target="twitter" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Twitter">
+                <param name="ios-package" value="Twitter"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Twitter.h"/>
+        <source-file src="src/ios/Twitter.m"/>
+        <framework src="Social.framework" />
+        <framework src="Accounts.framework" />
+    </platform>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Twitter">
+                <param name="android-package" value="co.thinkim.twitter.Twitter"/>
+            </feature>
+        </config-file>
+        <source-file 
+            src="src/android/Twitter.java" 
+            target-dir="src/co.thinkim.twitter"/>
+    </platform>
+
+</plugin>
