@@ -54,7 +54,7 @@ module.exports = {
 		successCB  - function()
 		errorCB    - function(String)
 	*/
-    sendDirectMessage: function(myName, targetName, message, successCB, errorCB)
+	sendDirectMessage: function(myName, targetName, message, successCB, errorCB)
 	{
 		exec(
 			successCB,
